@@ -5,6 +5,7 @@
 
 void hotelmenu();
 void yourorder();
+void yourbill();
 
 int n,plates,cups,cusamt,ret,ret1;
 int i=1;
@@ -74,9 +75,43 @@ if(n==0)
 }
 
 }
+printf(":::::EXIT:::::\n");
+printf("\n");
+yourbill();
+ 
 }
 
-
+void yourbill()
+{
+   printf(":::Your Bill:::");
+   printf("\n");
+ 
+    tol1=samosa*n1;
+ 
+     tol2=dosa*n2;
+ 
+ tol3=tea*n3;
+ 
+     total=tol1+tol2+tol3;
+ 
+     printf("---------------------------------------------------\n");
+     printf("Sr.No |    Item   |   Qty    |   Rate  |  Sub Total\n");
+     printf("---------------------------------------------------\n");
+     if(tol1!=0)
+     {
+         printf("  1   |   Samosa  |   %d     |   20/-  |    %d/-    \n",n1,tol1);
+     } if(tol2!=0)
+     {
+         printf("  2   |   Dosa    |   %d     |   30/-  |    %d/-     \n",n2,tol2);
+     } if(tol3!=0)
+     {
+         printf("  3   |   Tea     |   %d     |   10/-  |    %d/-     \n",n3,tol3);
+     }
+     printf("---------------------------------------------------\n");
+     printf("                        Grand Total :-      %d/-     \n",total);
+     printf("---------------------------------------------------\n");
+ 
+}
 
 
 
