@@ -6,6 +6,7 @@
 void hotelmenu();
 void yourorder();
 void yourbill();
+void totalnotes();
 
 int n,plates,cups,cusamt,ret,ret1;
 int i=1;
@@ -78,7 +79,60 @@ if(n==0)
 printf(":::::EXIT:::::\n");
 printf("\n");
 yourbill();
+while(v){
+         printf("\nEnter Customer amount : ");
+        scanf("%d",&cusamt);
  
+printf("\n");
+ 
+ 
+if(cusamt > total)
+{
+   ret=cusamt-total;
+   printf("Your return amount is : %d\n ",ret);
+   printf("\n");
+v=0;
+totalnotes();
+}
+ 
+  else if(cusamt==total)
+{
+   printf("******THANKU******\n");
+   printf("--Do visit Again--\n");
+v=0;
+}
+ 
+else
+{
+ if(ret1){
+        if(ret1 > cusamt){
+   ret1 = ret1 - cusamt;
+    printf("\nPlease pay more %d Rs\n",ret1);
+}else if(ret1 < cusamt){
+    ret1 = cusamt - ret1;
+    printf("Your Return Amount is : %d\n",ret1);
+    v=0;
+ret1=ret;
+totalnotes();
+}
+ 
+else
+{
+printf("******THANKU******\n");
+printf("--Do visit Again--\n");
+v=0;
+}
+ }else{
+ret=total-cusamt;
+ret1 = ret;
+printf("\nPlease pay more %d Rs\n",ret);
+ }
+ 
+}
+ 
+}
+}
+
 }
 
 void yourbill()
@@ -113,7 +167,76 @@ void yourbill()
  
 }
 
-
+void totalnotes()
+{
+ 
+  total= ret/500;
+total1=500*total;
+if(total1!=0){
+printf("500 Notes X %d = %d  \n",total,total1);
+  }
+ 
+ret= ret-(total*500);
+total = ret/200;
+total2=200*total;
+if(total2!=0)
+{
+    printf("200 Notes X %d = %d  \n",total,total2);
+}
+ 
+ret= ret-(total*200);
+total = ret/100;
+total3=100*total;
+if(total3!=0)
+{printf("100 Notes X %d = %d  \n",total,total3);
+}
+ 
+ret= ret-(total*100);
+total = ret/50;
+total4=50*total;
+if(total4!=0)
+{
+printf("50 Notes X %d = %d  \n",total,total4);
+}
+ 
+ 
+ret = ret -(total*50);
+total = ret/20;
+total5=20*total;
+if(total5!=0)
+{
+printf("20 Notes X %d = %d  \n",total,total5);
+}
+ 
+ 
+ret = ret -(total*20);
+total =ret/10;
+total6=10*total;
+if(total6!=0){
+printf("10 Notes X %d = %d  \n",total,total6);
+}
+ 
+ret = ret -(total*10);
+total =ret/5;
+total7=5*total;
+if(total7!=0){
+printf("5 Notes X %d = %d  \n",total,total7);
+}
+ 
+ret = ret -(total*5);
+total =ret/2;
+total8=2*total;
+if(total8!=0){
+printf("2 Notes X %d = %d  \n",total,total8);
+}
+ 
+ret = ret -(total*2);
+total =ret/1;
+if(total9!=0){
+total9=1*total;
+printf("1 Notes X %d = %d  \n",total,total9);
+ }
+}
 
 
 
